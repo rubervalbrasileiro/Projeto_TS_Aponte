@@ -84,7 +84,6 @@ export class Titulo {
        this._totalDeAvaliacoes = totalDeAvaliacoes
    }
 
-
    public mostrarFicha(): void {
        console.log(`Nome do Filme: ${this._nome}\nGênero: ${this._genero}\nAno de Lançamento: ${this._anoDeLancamento}`)
    }
