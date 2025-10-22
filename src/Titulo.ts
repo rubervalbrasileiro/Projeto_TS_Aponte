@@ -88,6 +88,16 @@ export class Titulo {
        console.log(`Nome do Filme: ${this._nome}\nGênero: ${this._genero}\nAno de Lançamento: ${this._anoDeLancamento}`)
    }
 
+   public avaliacoes(nota: number): void {
+    
+    this._somaDasAvaliacoes = this._somaDasAvaliacoes + nota; 
+    this._totalDeAvaliacoes ++
+   }
+
+   public pegarMedia(): number {
+    return this._somaDasAvaliacoes / this._totalDeAvaliacoes;
+   }
+
 }
 
 

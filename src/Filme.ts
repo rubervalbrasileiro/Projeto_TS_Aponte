@@ -23,6 +23,8 @@ export class Filme extends Titulo{
         console.log(`Diretor: ${this.diretor}\n`)
    }
 
+   
+
 }
 
 

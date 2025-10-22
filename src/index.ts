@@ -365,6 +365,12 @@ const filme = new Filme("Alice no País das Maravilhas", 1951, "Animação", "Cl
 filme.duracaoEmMinutos = 120;
 filme.incluidoNoPlano = true;
 filme.mostrarFicha();
+filme.avaliacoes(10);
+filme.avaliacoes(9);
+filme.avaliacoes(3);
+
+const resultado = filme.pegarMedia().toFixed(1);
+console.log(resultado);
 
 
 const serie = new Serie("American Horror Story", 2011, "Terror", 12);
