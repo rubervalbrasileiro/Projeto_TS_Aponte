@@ -8,8 +8,8 @@ export class Serie extends Titulo {
    private _minutosPorEpisodios: number = 0
 
     constructor(nome: string, anoDeLancamento: number, genero: string, temporadas: number) {
-              super(nome, anoDeLancamento, genero);
-              this._temporadas = temporadas
+              super(nome, anoDeLancamento, genero); // este vem primeiro
+              this._temporadas = temporadas // este depois obedecer sempre estar ordem.
     }
 
    get temporadas(): number {
@@ -43,6 +43,7 @@ export class Serie extends Titulo {
    }
 
    override mostrarFicha(): void {
-        console.log(`Nome da Série: ${this.nome}\nGênero: ${this.genero}\nAno de Lançamento: ${this.anoDeLancamento}\nEpsisódios: ${this.temporadas}\nAtiva: ${this.ativa}\n`)
+        console.log(`Nome da Série: ${this.nome}\nGênero: ${this.genero}\nAno de Lançamento: ${this.anoDeLancamento}\nEpsisódios: ${this.temporadas}\nAtiva: ${this.ativa}\nEpisodios Por Temporada: ${this.episodiosPorTemporada}\n`)
    }
+
 }

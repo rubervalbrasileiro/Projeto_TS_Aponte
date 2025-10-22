@@ -5,8 +5,8 @@ export class Filme extends Titulo{
    private _diretor?: string
 
     constructor(nome: string, anoDeLancamento: number, genero: string, diretor: string,) {
-        super(nome, anoDeLancamento, genero)
-        this._diretor = diretor
+        super(nome, anoDeLancamento, genero) // este sempre primeiro
+        this._diretor = diretor // obedecer sempre esta ordem
     }
 
    get diretor(): string| undefined {
@@ -16,6 +16,11 @@ export class Filme extends Titulo{
 
    set diretor(diretor: string) {
        this._diretor = diretor
+   }
+
+   public mostrarFicha(): void {
+    super.mostrarFicha()
+        console.log(`Diretor: ${this.diretor}\n`)
    }
 
 }

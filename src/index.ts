@@ -369,4 +369,6 @@ filme.mostrarFicha();
 
 const serie = new Serie("American Horror Story", 2011, "Terror", 12);
 serie.ativa = true;
+serie.episodiosPorTemporada = 6;
 serie.mostrarFicha();
+
