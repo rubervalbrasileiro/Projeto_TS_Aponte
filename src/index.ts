@@ -374,7 +374,7 @@ const resultado = filme.pegarMedia().toFixed(1);
 console.log(resultado);
 
 
-const epsodio = new Epsodio("Chazan", 1);
+const epsodio = new Epsodio("Chazan", 2025, "Infantil");
 
 const serie = new Serie("American Horror Story", 2011, "Terror", 12);
 serie.ativa = true;
