@@ -359,6 +359,7 @@ console.log(`A média do aluno ${aluno.nome} é ${media}`);*/
 
 import { Filme } from "./Filme.js"
 import { Serie } from "./Serie.js"
+import { Epsodio} from "./Epsodio.js"
 
 
 const filme = new Filme("Alice no País das Maravilhas", 1951, "Animação", "Clyde Geronimi");
@@ -373,8 +374,11 @@ const resultado = filme.pegarMedia().toFixed(1);
 console.log(resultado);
 
 
+const epsodio = new Epsodio("Chazan", 1);
+
 const serie = new Serie("American Horror Story", 2011, "Terror", 12);
 serie.ativa = true;
 serie.episodiosPorTemporada = 6;
 serie.mostrarFicha();
+epsodio.mostrarFicha();
 
