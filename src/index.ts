@@ -356,7 +356,7 @@ aluno.nota = 10
 const media = aluno.mediaNotas();
 console.log(`A média do aluno ${aluno.nome} é ${media}`);*/
 
-
+/*
 import { Filme } from "./Filme.js"
 import { Serie } from "./Serie.js"
 import { Epsodio} from "./Epsodio.js"
@@ -381,4 +381,28 @@ serie.ativa = true;
 serie.episodiosPorTemporada = 6;
 serie.mostrarFicha();
 epsodio.mostrarFicha();
+*/
 
+interface animal {
+  emitirSom(): void;
+  nomeAnimal(): void;
+}
+
+interface nomeAnimais {
+  nome: string;
+}
+
+class Cachorro implements animal, nomeAnimais {
+  //nome: string = "Rex";
+  emitirSom(): void {
+    console.log("Uau Uau");
+  }
+  nomeAnimal(): void {
+    console.log(this.nome)
+  }
+}
+
+const cachorro = new Cachorro;
+console.log("Cachorro");
+cachorro.nomeAnimal();
+cachorro.emitirSom();
