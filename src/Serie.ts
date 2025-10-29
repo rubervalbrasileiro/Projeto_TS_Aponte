@@ -2,10 +2,10 @@ import { Titulo } from "./Titulo.js"
 
 
 export class Serie extends Titulo {
-   private _temporadas: number = 0
-   private _episodiosPorTemporada: number = 0
-   private _ativa: boolean = false
-   private _minutosPorEpisodios: number = 0
+   private _temporadas: number = 2
+   private _episodiosPorTemporada: number = 6
+   private _ativa: boolean = true
+   private _minutosPorEpisodios: number = 60
 
     constructor(nome: string, anoDeLancamento: number, genero: string, temporadas: number) {
               super(nome, anoDeLancamento, genero); // este vem primeiro
@@ -45,5 +45,6 @@ export class Serie extends Titulo {
    override mostrarFicha(): void {
         console.log(`Nome da Série: ${this.nome}\nGênero: ${this.genero}\nAno de Lançamento: ${this.anoDeLancamento}\nEpsisódios: ${this.temporadas}\nAtiva: ${this.ativa}\nEpisodios Por Temporada: ${this.episodiosPorTemporada}\n`)
    }
+
 
 }
