@@ -392,6 +392,37 @@ interface nomeAnimais {
   nome: string;
 }
 
+import { Filme } from "./Filme.js"
+import { Serie } from "./Serie.js"
+import { Epsodio} from "./Epsodio.js"
+
+
+const filme = new Filme("Doutor Estranho", 2016, "Ação", "Derrickson");
+filme.mostrarFicha();
+filme.avaliacoes(10);
+filme.avaliacoes(5);
+filme.avaliacoes(7);
+filme.incluidoNoPlano = true;
+
+const resultado = filme.pegarMedia().toFixed(2);
+console.log(`Média das Avaliaççoes do filme ${resultado}`);
+console.log(`Total de avaliações: ${filme.totalDeAvaliacoes}\n`);
+
+const serie = new Serie("The Chose", 2017, "Cristã", 10);
+serie.mostrarFicha();
+serie.temporadas = 5;
+serie.episodiosPorTemporada = 8;
+serie.ativa = true;
+serie.minutosPorEpisodios = 72;
+serie.incluidoNoPlano = true;
+serie.avaliacoes(10);
+serie.avaliacoes(10);
+serie.avaliacoes(10);
+const resultadoSerie = serie.pegarMedia().toFixed(2);
+console.log(`Média total de avaliações da série ${serie.nome}: ${resultadoSerie}`);
+console.log(`Total de avaliações: ${serie.totalDeAvaliacoes}`);
+
+/*
 class Cachorro implements animal, nomeAnimais {
   //nome: string = "Rex";
   emitirSom(): void {
@@ -406,3 +437,4 @@ const cachorro = new Cachorro;
 console.log("Cachorro");
 cachorro.nomeAnimal();
 cachorro.emitirSom();
+*/

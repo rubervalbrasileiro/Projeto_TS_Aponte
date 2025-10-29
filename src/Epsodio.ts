@@ -1,25 +1,38 @@
-import { Titulo } from "./Titulo.js"
+import type { IClassificacao } from "./IClassificacao.js";
 
-export class Epsodio extends Titulo {
-    private _nomeEpsodio: string ="";
+
+export class Epsodio implements IClassificacao  {
     private _numeroDoEpsodio:  number =0;
-    private _temporada: number =0;
-    private _sinopseCapitulo: string ="";
+    private _tituloDoEpsodio: string = "Ouvidos para ouvir";
+    private _serie: string = "The Chose";
+    private _totalDeVisualizacoes: number = 0;
+    
+    //private _nomeEpsodio: string ="";
+    //private _temporada: number =0;
+    //private _sinopseCapitulo: string ="";
 
-    get nomeEpsodio(): string {
-        return this.nomeEpsodio;
-    }
-
-    set nomeEpsodio(nomeEpsodio: string) {
-        this._nomeEpsodio = nomeEpsodio;
-    }
-
-    get numeroDoEpsodio(): number {
+    get numeroDoEpisodio(): number {
         return this._numeroDoEpsodio;
     }
 
-    set numeroDoEpsodio(numeroDoEpsodio: number) {
-        this._numeroDoEpsodio = numeroDoEpsodio;
+    set numeroDoEpisodio(numeroDoEpisodio: number) {
+        this.numeroDoEpisodio = numeroDoEpisodio;
+    }
+
+    get totalDeVisualizacoes(): number {
+        return this._totalDeVisualizacoes;
+    }
+
+    set totalDeVisualizacoes(totalDeVisualizacoes: number) {
+        this._totalDeVisualizacoes = totalDeVisualizacoes;
+    }
+
+    get tituloDoEpsodio(): string {
+        return this._tituloDoEpsodio;
+    }
+
+    set tituloDoEpsodio(tituloDoEpsodio: number) {
+        this.tituloDoEpsodio = tituloDoEpsodio;
     }
 
     get temporada(): number {
@@ -27,6 +40,16 @@ export class Epsodio extends Titulo {
     }
 
     set temporada(temporada: number) {
-        this._temporada = temporada;
+        this.temporada = temporada;
+    }
+
+    pegarClassificacao(): number {
+        if(this._totalDeVisualizacoes > 500) {
+            return 4.0
+        }else if(this._totalDeVisualizacoes > 200) {
+            return 3.0
+        } else {
+            return 2.0
+        }
     }
 }

@@ -1,7 +1,7 @@
 import { Titulo } from "./Titulo.js"
+import type { IClassificacao } from "./IClassificacao.js"
 
-
-export class Filme extends Titulo{
+export class Filme extends Titulo implements IClassificacao {
    private _diretor?: string
 
     constructor(nome: string, anoDeLancamento: number, genero: string, diretor: string,) {
@@ -23,7 +23,9 @@ export class Filme extends Titulo{
         console.log(`Diretor: ${this.diretor}\n`)
    }
 
-   
+   pegarClassificacao(): number {
+    return this.pegarMedia() / 2;
+   }
 
 }
 
