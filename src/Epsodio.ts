@@ -2,7 +2,7 @@ import type { IClassificacao } from "./IClassificacao.js";
 
 
 export class Epsodio implements IClassificacao  {
-    private _numeroDoEpsodio:  number =0;
+    private _numeroDoEpisodio:  number =0;
     private _tituloDoEpsodio: string = "Ouvidos para ouvir";
     private _serie: string = "The Chose";
     private _totalDeVisualizacoes: number = 0;
@@ -12,11 +12,19 @@ export class Epsodio implements IClassificacao  {
     //private _sinopseCapitulo: string ="";
 
     get numeroDoEpisodio(): number {
-        return this._numeroDoEpsodio;
+        return this._numeroDoEpisodio;
     }
 
     set numeroDoEpisodio(numeroDoEpisodio: number) {
-        this.numeroDoEpisodio = numeroDoEpisodio;
+        this._numeroDoEpisodio = numeroDoEpisodio;
+    }
+
+    get serie(): string {
+        return this._serie;
+    }
+
+    set serie(serie: string) {
+        this._serie = serie;
     }
 
     get totalDeVisualizacoes(): number {
@@ -31,8 +39,8 @@ export class Epsodio implements IClassificacao  {
         return this._tituloDoEpsodio;
     }
 
-    set tituloDoEpsodio(tituloDoEpsodio: number) {
-        this.tituloDoEpsodio = tituloDoEpsodio;
+    set tituloDoEpsodio(tituloDoEpsodio: string) {
+        this._tituloDoEpsodio = tituloDoEpsodio;
     }
 
     get temporada(): number {

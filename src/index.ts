@@ -422,6 +422,13 @@ const resultadoSerie = serie.pegarMedia().toFixed(2);
 console.log(`Média total de avaliações da série ${serie.nome}: ${resultadoSerie}`);
 console.log(`Total de avaliações: ${serie.totalDeAvaliacoes}`);
 
+const episodio = new Epsodio;
+episodio.numeroDoEpisodio =5;
+episodio.tituloDoEpsodio = "Irmão da fé";
+episodio.serie = "Scool Bidoo";
+episodio.totalDeVisualizacoes = 370;
+
+
 /*
 class Cachorro implements animal, nomeAnimais {
   //nome: string = "Rex";
