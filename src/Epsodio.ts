@@ -57,7 +57,7 @@ export class Epsodio implements IClassificacao  {
         }else if(this._totalDeVisualizacoes > 200) {
             return 3.0
         } else {
-            return 2.0
+            return 1.8
         }
     }
 }

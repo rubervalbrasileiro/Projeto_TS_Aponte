@@ -395,7 +395,9 @@ interface nomeAnimais {
 import { Filme } from "./Filme.js"
 import { Serie } from "./Serie.js"
 import { Epsodio} from "./Epsodio.js"
+import { Filtro } from "./Filtro.js";
 
+const filtro = new Filtro;
 
 const filme = new Filme("Doutor Estranho", 2016, "Ação", "Derrickson");
 filme.mostrarFicha();
@@ -407,6 +409,9 @@ filme.incluidoNoPlano = true;
 const resultado = filme.pegarMedia().toFixed(2);
 console.log(`Média das Avaliaççoes do filme ${resultado}`);
 console.log(`Total de avaliações: ${filme.totalDeAvaliacoes}\n`);
+filtro.filtrar(filme);
+console.log("");
+
 
 const serie = new Serie("The Chose", 2017, "Cristã", 10);
 serie.mostrarFicha();
@@ -423,10 +428,14 @@ console.log(`Média total de avaliações da série ${serie.nome}: ${resultadoSe
 console.log(`Total de avaliações: ${serie.totalDeAvaliacoes}`);
 
 const episodio = new Epsodio;
-episodio.numeroDoEpisodio =5;
+episodio.numeroDoEpisodio = 5;
 episodio.tituloDoEpsodio = "Irmão da fé";
 episodio.serie = "Scool Bidoo";
-episodio.totalDeVisualizacoes = 370;
+episodio.totalDeVisualizacoes = 150;
+
+//const filtro = new Filtro;
+const filtrarEpsodio = filtro.filtrar(episodio);
+console.log(`Episódio ${episodio.tituloDoEpsodio}: ${filtrarEpsodio}`);
 
 
 /*
