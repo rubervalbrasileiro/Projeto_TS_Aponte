@@ -382,7 +382,8 @@ serie.episodiosPorTemporada = 6;
 serie.mostrarFicha();
 epsodio.mostrarFicha();
 */
-
+// inicio do comentário
+/*
 interface animal {
   emitirSom(): void;
   nomeAnimal(): void;
@@ -454,3 +455,49 @@ console.log("Cachorro");
 cachorro.nomeAnimal();
 cachorro.emitirSom();
 */
+
+  class Aluno {
+  private somaNotas: number = 0;
+  private qtdNotas: number = 0;
+
+  
+  adicionarNota(nota: number): void {
+    if (nota < 0 || nota > 10) {
+      throw new Error("Digite uma nota válida!\n");
+    }
+
+    this.somaNotas += nota;
+    this.qtdNotas++;
+  }
+
+  
+  calcularMedia(): number {
+    if (this.qtdNotas === 0) {
+       throw new Error("Nenhuma nota foi adicionada")
+    }
+
+    const media = this.somaNotas / this.qtdNotas;
+    return parseFloat(media.toFixed(2));
+  }
+
+  
+  mostrarMedia(): void {
+    console.log(`A média final é: ${this.calcularMedia()}`);
+  }
+}
+
+  try{
+    const aluno = new Aluno();
+    aluno.adicionarNota(-1);
+    aluno.adicionarNota(12); 
+    aluno.adicionarNota(7);
+    aluno.mostrarMedia();
+  }catch(erro: any) {
+    console.error("Ocorreu um erro: "+ erro.message )
+  }
+  
+/*
+  const erro = new Error("Nota inválida!");
+  console.log(erro.message); //"nota inválida"
+  console.log(erro.name);  // "Error"
+  */
