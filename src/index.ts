@@ -391,7 +391,6 @@ interface animal {
 interface nomeAnimais {
   nome: string;
 }
-*/
 import { Filme } from "./Filme.js"
 import { Serie } from "./Serie.js"
 import { Epsodio} from "./Epsodio.js"
@@ -399,40 +398,40 @@ import { Filtro } from "./Filtro.js";
 
 const filtro = new Filtro;
 try{
-const filme = new Filme("Doutor Estranho", 2016, "Ação", "Derrickson");
-filme.mostrarFicha();
-filme.avaliacoes(10);
-filme.avaliacoes(5);
-filme.avaliacoes(7);
-filme.incluidoNoPlano = true;
-
-const resultado = filme.pegarMedia().toFixed(2);
-console.log(`Média das Avaliaççoes do filme ${resultado}`);
-console.log(`Total de avaliações: ${filme.totalDeAvaliacoes}\n`);
-filtro.filtrar(filme);
-console.log("");
-
-
-const serie = new Serie("The Chose", 2017, "Cristã", 10);
-serie.mostrarFicha();
-serie.temporadas = 5;
-serie.episodiosPorTemporada = 8;
-serie.ativa = true;
-serie.minutosPorEpisodios = 72;
-serie.incluidoNoPlano = true;
-serie.avaliacoes(15);
-serie.avaliacoes(10);
-serie.avaliacoes(10);
-
-const resultadoSerie = serie.pegarMedia().toFixed(2);
-console.log(`Média total de avaliações da série ${serie.nome}: ${resultadoSerie}`);
-console.log(`Total de avaliações: ${serie.totalDeAvaliacoes}`);
+  const filme = new Filme("Doutor Estranho", 2016, "Ação", "Derrickson");
+  filme.mostrarFicha();
+  filme.avaliacoes(10);
+  filme.avaliacoes(5);
+  filme.avaliacoes(7);
+  filme.incluidoNoPlano = true;
+  
+  const resultado = filme.pegarMedia().toFixed(2);
+  console.log(`Média das Avaliaççoes do filme ${resultado}`);
+  console.log(`Total de avaliações: ${filme.totalDeAvaliacoes}\n`);
+  filtro.filtrar(filme);
+  console.log("");
+  
+  
+  const serie = new Serie("The Chose", 2017, "Cristã", 10);
+  serie.mostrarFicha();
+  serie.temporadas = 5;
+  serie.episodiosPorTemporada = 8;
+  serie.ativa = true;
+  serie.minutosPorEpisodios = 72;
+  serie.incluidoNoPlano = true;
+  serie.avaliacoes(15);
+  serie.avaliacoes(10);
+  serie.avaliacoes(10);
+  
+  const resultadoSerie = serie.pegarMedia().toFixed(2);
+  console.log(`Média total de avaliações da série ${serie.nome}: ${resultadoSerie}`);
+  console.log(`Total de avaliações: ${serie.totalDeAvaliacoes}`);
 }catch(erro) {
   if(erro instanceof Error){
-  console.error("Ocorreu um erro", erro.message)
-}
-else{
-  console.log("Erro desconhecido");
+    console.error("Ocorreu um erro", erro.message)
+  }
+  else{
+    console.log("Erro desconhecido");
 }
 }
 const episodio = new Epsodio;
@@ -446,3 +445,54 @@ const filtrarEpsodio = filtro.filtrar(episodio);
 console.log(`Episódio ${episodio.tituloDoEpsodio}: ${filtrarEpsodio}`);
 
 
+// Cadastrando usuário
+function cadastrarUsuario(nome: string, idade: number): void{
+  try {
+    if(!nome) {
+    console.log("Erro: nome é obrigatório!\n");
+    throw new Error("Nome obrigatório!\n");
+  }
+  
+  if(idade < 0 || idade > 120) {
+    console.log("Erro idade inválida!");
+    throw new Error("Idade inválida!\n")
+  }
+  console.log("✅ Cadastardo com sucesso!\n")
+  } catch(erro){
+    console.error("❌ Falaha no cadastro")
+  }
+  console.log(`Usuário ${nome} cadastrado com sucesso!`)
+}
+
+cadastrarUsuario("Ana", 25);
+console.log();
+cadastrarUsuario("", 20);
+console.log();
+
+
+console.log("Teste 1\n");
+cadastrarUsuario("Ruberval", 49);
+console.log("");
+console.log("Teste 2\n");
+cadastrarUsuario("", 16);
+console.log("Teste 3\n");
+cadastrarUsuario("Bob", 160);
+console.log("");
+
+*/
+
+function dividir(a: number, b: number): number{
+  try {
+    if(b === 0) {
+      //console.log("Erro: divisã por zero! ");
+      throw new Error("❌ Divisão por zero\n")
+      return 0;
+    }
+    return a/b;
+  }catch{
+    if(erro instanceof Error){
+      
+    }
+    throw new Error("❌ erro de divisão!\n" )
+  }
+}
