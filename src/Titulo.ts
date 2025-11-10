@@ -89,7 +89,9 @@ export class Titulo {
    }
 
    public avaliacoes(nota: number): void {
-    
+    if(nota < 0 || nota > 10) {
+      throw new Error("Nota Inválida")
+    }
     this._somaDasAvaliacoes = this._somaDasAvaliacoes + nota; 
     this._totalDeAvaliacoes ++
    }

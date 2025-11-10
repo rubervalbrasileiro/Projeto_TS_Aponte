@@ -381,8 +381,9 @@ serie.ativa = true;
 serie.episodiosPorTemporada = 6;
 serie.mostrarFicha();
 epsodio.mostrarFicha();
-
+*/
 // inicio do comentário
+/*
 interface animal {
   emitirSom(): void;
   nomeAnimal(): void;
@@ -391,14 +392,14 @@ interface animal {
 interface nomeAnimais {
   nome: string;
 }
-*/
+
 import { Filme } from "./Filme.js"
 import { Serie } from "./Serie.js"
 import { Epsodio} from "./Epsodio.js"
 import { Filtro } from "./Filtro.js";
 
 const filtro = new Filtro;
-try{
+
 const filme = new Filme("Doutor Estranho", 2016, "Ação", "Derrickson");
 filme.mostrarFicha();
 filme.avaliacoes(10);
@@ -420,21 +421,13 @@ serie.episodiosPorTemporada = 8;
 serie.ativa = true;
 serie.minutosPorEpisodios = 72;
 serie.incluidoNoPlano = true;
-serie.avaliacoes(15);
 serie.avaliacoes(10);
 serie.avaliacoes(10);
-
+serie.avaliacoes(10);
 const resultadoSerie = serie.pegarMedia().toFixed(2);
 console.log(`Média total de avaliações da série ${serie.nome}: ${resultadoSerie}`);
 console.log(`Total de avaliações: ${serie.totalDeAvaliacoes}`);
-}catch(erro) {
-  if(erro instanceof Error){
-  console.error("Ocorreu um erro", erro.message)
-}
-else{
-  console.log("Erro desconhecido");
-}
-}
+
 const episodio = new Epsodio;
 episodio.numeroDoEpisodio = 5;
 episodio.tituloDoEpsodio = "Irmão da fé";
@@ -446,3 +439,73 @@ const filtrarEpsodio = filtro.filtrar(episodio);
 console.log(`Episódio ${episodio.tituloDoEpsodio}: ${filtrarEpsodio}`);
 
 
+/*
+class Cachorro implements animal, nomeAnimais {
+  //nome: string = "Rex";
+  emitirSom(): void {
+    console.log("Uau Uau");
+  }
+  nomeAnimal(): void {
+    console.log(this.nome)
+  }
+}
+
+const cachorro = new Cachorro;
+console.log("Cachorro");
+cachorro.nomeAnimal();
+cachorro.emitirSom();
+*/
+
+/*
+  class Aluno {
+  private somaNotas: number = 0;
+  private qtdNotas: number = 0;
+
+  
+  adicionarNota(nota: number): void {
+    if (nota < 0 || nota > 10) {
+      throw new Error("Digite uma nota válida!\n");
+    }
+
+    this.somaNotas += nota;
+    this.qtdNotas++;
+  }
+
+  
+  calcularMedia(): number {
+    if (this.qtdNotas === 0) {
+       throw new Error("Nenhuma nota foi adicionada")
+    }
+
+    const media = this.somaNotas / this.qtdNotas;
+    return parseFloat(media.toFixed(2));
+  }
+
+  
+  mostrarMedia(): void {
+    console.log(`A média final é: ${this.calcularMedia()}`);
+  }
+}
+
+  try{
+    const aluno = new Aluno();
+    aluno.adicionarNota(-1);
+    aluno.adicionarNota(12); 
+    aluno.adicionarNota(7);
+    aluno.mostrarMedia();
+  }catch(erro) {
+    if(erro instanceof Error){
+      console.error("Ocorreu um erro: "+ erro.message )
+
+    }else{
+      console.log("Ocorreu um erro desconhecido: ", erro);
+    }
+  }
+
+ 
+  
+/*
+  const erro = new Error("Nota inválida!");
+  console.log(erro.message); //"nota inválida"
+  console.log(erro.name);  // "Error"
+  */
