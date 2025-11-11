@@ -480,19 +480,93 @@ cadastrarUsuario("Bob", 160);
 console.log("");
 
 */
-
+// 2 case divisão segura
+/*
 function dividir(a: number, b: number): number{
   try {
+    
     if(b === 0) {
       //console.log("Erro: divisã por zero! ");
       throw new Error("❌ Divisão por zero\n")
-      return 0;
     }
     return a/b;
-  }catch{
+  }catch (erro){
     if(erro instanceof Error){
-      
+      throw erro;
     }
     throw new Error("❌ erro de divisão!\n" )
   }
 }
+console.log("Teste 1\n");
+let resultado = dividir(11, 2);
+dividir(10, 2);
+console.log(`Resultado da divisão é: ${resultado}\n`);
+console.log("\n");
+
+console.log("Teste 2\n");
+let resultado1 = dividir(10, 3).toFixed(2);
+console.log(`Resultado da divisão é: ${resultado1}`);
+console.log("\n");
+
+console.log("Teste 3\n");
+let resultado3 = dividir(5, 2);
+console.log(`Resultado da divisão é: ${resultado3}`);
+console.log("\n");
+*/
+
+//Velocidade de um veículo
+/*
+function verificarVelocidade(velocidade: number): void {
+try {
+
+  if (velocidade < 0 ) {
+    throw("Velocidade não pode ser negativa!");
+    
+  }if (velocidade > 120){
+    throw(`Limite de velocidade ultapassado você!, ${velocidade}`)
+  }
+}catch(erro) {
+  if(erro instanceof Error){
+      throw erro;
+    }
+    throw new Error("❌ Acima do limite permitido, você foi multado!\n" )
+}
+  console.log(`Velocidade dentro do limite estabelecido da via! ${velocidade} km\n`)
+}
+
+console.log(`Velocidade 1`);
+verificarVelocidade(0);
+console.log();
+
+console.log(`velocidade 2`);
+verificarVelocidade(80);
+console.log();
+
+console.log(`Velocidade 3`);
+verificarVelocidade(130);
+console.log();
+*/
+
+//Conta Bancária
+
+function sacar(valor: number, saldo: number): number{
+  try {
+
+    if(valor <= 0) {
+      throw("O valor de saque deve ser maior que zero!\n");
+      return saldo;
+    }if(valor > saldo) {
+      throw("Erro saldo insuficiente!\n");
+      return saldo;
+    }
+  }catch(erro) {
+     if(erro instanceof Error){
+      throw erro;
+    }
+    throw new Error("❌ Saldo insuficiente!\n" )
+    }
+    return saldo -valor;
+  }
+
+  console.log(sacar(100, 200));
+  console.log(sacar(300, 200));
