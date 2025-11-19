@@ -569,4 +569,4 @@ function sacar(valor: number, saldo: number): number{
   }
 
   console.log(sacar(100, 200));
-  console.log(sacar(300, 200));
+  //console.log(sacar(300, 200));
